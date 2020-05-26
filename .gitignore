@@ -1,0 +1,6 @@
+/.idea/
+/.env.local
+/.env.local.php
+/.env.*.local
+.env
+.idea/
