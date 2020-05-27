@@ -3,12 +3,13 @@
 es: http://es:9200
 
 osm:
-  url: https://download.geofabrik.de/europe/luxembourg-latest.osm.pbf
+#  url: https://download.geofabrik.de/europe/luxembourg-latest.osm.pbf
+  url: https://download.geofabrik.de/europe-latest.osm.pbf
 
 admin:
   cosmogony:
     output_dir: /data/cosmogony
-    langs: "fr,en,de"
+    langs: "ru,en,ua"
 
 street:
   osm_db_file: /data/osm/osm_db.tmp
@@ -26,7 +27,7 @@ addresses:
 
     # Patterns of file to import URLs from.
     include:
-      - lu/**.csv
+      # - lu/**.csv
       # - at/**.csv
       # - be/**.csv
       # - de/**.csv
