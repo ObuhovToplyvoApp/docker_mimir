@@ -22,15 +22,17 @@ services:
 
   es:
     image: elasticsearch:2
+    container_name: mimir_elastic_search
     ports:
-      - 9200
+      - 32732:9200
 
   bragi:
     image: navitia/bragi
+    container_name: mimir_bragi
     environment:
       - BRAGI_ES=http://es:9200
     ports:
-      - 4000
+      - 32632:4000
 
   cosmogony:
     image: osmwithoutborders/cosmogony
