@@ -1,12 +1,13 @@
 ## MANDATORY url to elasticsearch
 # es:
+es: http://es:9200
 
 ## Name of the dataset
 dataset: default
 
 osm: # A file or a url MUST be defined
   file: # Ignored if a url is defined
-  url: # Url to a .osm.pbf file that will be downloaded
+  url: https://download.geofabrik.de/europe-latest.osm.pbf
 
 # admin:
 #   ## If present will use the admins from cosmogony
@@ -29,8 +30,12 @@ osm: # A file or a url MUST be defined
 #       - 8
 #     nb_shards:  # control the number of shards of the ES index
 #     nb_replicas:  # control the number of replicas of the ES index
-
-
+admin:
+  cosmogony:
+    output_dir: /data/cosmogony
+    langs: "ru,en,ua"
+street:
+  osm_db_file: /data/osm/osm_db.tmp
 
 # # If present, this will control the import of the Point Of Interest
 # poi:
@@ -62,9 +67,9 @@ addresses:
 
   oa:
     path: # Path to .csv, or a directory with multiple .csv (ignored if 'url' is defined)
-    url: # Url where to download OpenAddresses data
+    url: https://data.openaddresses.io/openaddr-collected-europe.zip
     include: # List of file patterns to include from path
-      - lu/**.csv
+#      - lu/**.csv
       # - fr/**.csv
     nb_threads: # number of threads to use
 #   nb_shards:  # control the number of shards of the ES index
@@ -72,7 +77,7 @@ addresses:
 
   bano:
     file: # Path to the bano file, ignored if url is defined
-    url: # https://bano.openstreetmap.fr/data/full.csv.gz
+    url: https://bano.openstreetmap.fr/data/full.csv.gz
     nb_threads: # number of threads to use
 #   nb_shards:  # control the number of shards of the ES index
 #   nb_replicas:  # control the number of replicas of the ES index
@@ -81,7 +86,7 @@ addresses:
   # NOTE: this section will be ignored if `use_deduplicator` is set to false.
   osm:
     file: # Path to the .pbf file (ignored if 'url' is defined)
-    url: # https://download.geofabrik.de/europe/luxembourg-latest.osm.pbf
+    url: https://download.geofabrik.de/europe-latest.osm.pbf
 
 # street:
 #   nb_shards:  # control the number of shards of the ES index
